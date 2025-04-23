@@ -5,20 +5,47 @@ function selecionarModalidade(modalidade){
   modalidadeSelecionada = modalidade;
 }
 
-function enviar(){
-  const nome =document.getElementById("nome").value;
+function enviar() {
+  const nome = document.getElementById("nome").value;
 
-  if(nome==="" || modalidadeSelecionada===""){
-    alert("preencha o nome e escolha uma modalidade.");
+  if (nome === "" || modalidadeSelecionada === "") {
+    alert("Preencha o nome e escolha uma modalidade.");
     return;
   }
-    // Recupera a lista atual (ou cria uma nova se não existir)
 
-  let fila =JSON.parse(localStorage.getItem("fila")) || [];
+  // Recupera ou inicia a fila
+  let fila = JSON.parse(localStorage.getItem("fila")) || [];
 
-  fila.push({nome: nome, modalidade: modalidadeSelecionada});
-  
-   localStorage.setItem("fila", JSON.stringify(fila));
+  // Recupera ou inicia o contador de fichas
+  let numeroFicha = parseInt(localStorage.getItem("numeroFicha") || "0");
+  numeroFicha++; // incrementa
 
-   window.location.href = "tv2.html"
+  // Cria o objeto da pessoa com número de ficha
+  const pessoa = {
+    nome: nome,
+    modalidade: modalidadeSelecionada,
+    ficha: numeroFicha
+  };
+
+  // Salva na fila e atualiza contador
+  fila.push(pessoa);
+  localStorage.setItem("fila", JSON.stringify(fila));
+  localStorage.setItem("numeroFicha", numeroFicha.toString());
+
+  // Mostra o cartão na tela
+  const card = document.createElement("div");
+  card.className = "ficha-card";
+  card.innerHTML = `
+    <h3>📄 Ficha Nº ${pessoa.ficha.toString().padStart(3, '0')}</h3>
+    <p>👤 Nome: ${pessoa.nome}</p>
+    <p>🏅 Modalidade: ${pessoa.modalidade}</p>
+  `;
+
+  document.body.appendChild(card);
+
+  // Redireciona depois de 3 segundos
+  setTimeout(() => {
+    window.location.href = "tv2.html";
+  }, 3000);
 }
+

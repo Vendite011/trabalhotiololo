@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    background-image: url(../fundoesporte.png);
+    background-size: cover;
+    font-family: Arial;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    opacity: 50%;
+}
+
+ul {
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    gap: 190px;
+  }
+
+li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+header {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 45px;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.area-nome {
+    width: 500px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 0px 20px 20px 0px;
+    border: 0px, solid black;
+}
+
+.area-nome::placeholder {
+    color: rgb(160, 160, 160);
+}
+
+p {
+    font-size: 30px;
+    margin-top: 60px;
+}
+
+.esportes {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.enviar {
+    text-align: center;
+}
+
+button {
+    border: 2px, solid black;
+    font-size: 20px;
+    position: relative;
+    width: 180px;
+    height: 80px;
+    opacity: 75%;
+}
+
+button.active {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.btn-vly {
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    transition: transform 0.2s ease, background-color 0.7s ease, color 0.7s ease;
+}
+
+.btn-vly:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+.btn-fut {
+    margin-left: 300px;
+    margin-right: 300px;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    transition: transform 0.2s ease, background-color 1s ease;
+}
+
+.btn-fut:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+.btn-bsk {
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    transition: transform 0.2s ease, background-color 1s ease;
+}
+
+.btn-bsk:hover {
+    transform: scale(1.1);
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+.btn-enviar {
+    margin-top: 85px;
+    width: 260px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+
+}
+
+.btn-enviar:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    
+}

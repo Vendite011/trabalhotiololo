@@ -16,7 +16,7 @@ function atualizarHora() {
     setInterval(() => {
       index = (index + 1) % imagens.length;
       carrossel.style.transform = `translateX(-${index * 100}%)`;
-    }, 3000);
+    }, 10000);
   }
   
   document.addEventListener("DOMContentLoaded", () => {

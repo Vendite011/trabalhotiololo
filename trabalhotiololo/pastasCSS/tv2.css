@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    opacity: 50%;
+}
+
+.ul-menu {
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    gap: 190px;
+  }
+
+li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+table, thead, tbody, tr, th, td {
+    display: block;
+}
+
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}

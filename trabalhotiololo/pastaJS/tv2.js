@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Criar botão de chamada
   const botaoChamar = document.createElement("button");
-  botaoChamar.textContent = "Chamar próxima pessoa";
+ // botaoChamar.textContent = "Chamar próxima pessoa";
   botaoChamar.style.marginTop = "20px";
   botaoChamar.addEventListener("click", chamarProximaPessoa);
 

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Painel ADM</title>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../pastasCSS/adm.css">
 </head>
 <body>
   <nav>
-    <ul>
+    <ul class="menu">
       <li><a href="recep.html">Recepção</a></li>
       <li><a href="tv2.html">TV2 (Fila)</a></li>
       <li><a href="adm.html">ADM</a></li>
@@ -15,16 +15,24 @@
     </ul>
   </nav>
 
-  <h2>Painel de Administração</h2>
+  <div id="adm-coluna">
+    <div class="pessoas-fila">
+     <p><strong>Total de pessoas na fila:</strong> <strong id="totalFila">0</strong></p>
 
-  <p>Total de pessoas na fila: <strong id="totalFila">0</strong></p>
+      <div id="contagemModalidades"></div>
+    </div>
 
-  <div id="contagemModalidades"></div>
+    <div class="fichas">
+    <h3>Fichas na fila</h3>
+    <div class="fichas-coluna">
+      <ul id="listaFichas"></ul>
+    </div>
 
-  <h3>Fichas na fila:</h3>
-  <ul id="listaFichas"></ul>
+    <button id="btnLimparFila">Limpar Fila</button>
+    </div>
+  </div>
 
-  <button id="btnLimparFila">Limpar Fila</button>
+  <div class="linha-vertical"></div>
 
   <script src="../pastaJS/adm.js"></script>
 </body>

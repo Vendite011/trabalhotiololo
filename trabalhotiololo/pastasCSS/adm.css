@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: rgb(30, 31, 66);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    opacity: 50%;
+}
+
+.menu {
+    font-size: 20px;
+    list-style: none;
+    display: flex;
+    gap: 190px;
+  }
+
+li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#adm-coluna {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start; /* Alinha no topo */
+    gap: 250px; /* Espaçamento entre os blocos */
+    margin-top: 50px;
+}
+
+p {
+    font-size: 40px;
+    text-align: center;
+}
+
+#contagemModalidades {
+    font-size: 30px;
+    display: flex; /* Trocar de block para flex */
+    justify-content: center;
+    gap: 100px; /* Espaçamento entre os blocos */
+    color: white;
+    text-align: center;
+}
+
+.modalidades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contagem-futebol, .contagem-volei, .contagem-basquete {
+    font-size: 40px;
+    padding: 30px;
+    margin: 0;
+}
+
+.fichas {
+    text-align: center;
+}
+
+.fichas-coluna {
+    text-align: left;
+}
+
+h3 {
+    font-size: 40px;
+}
+
+li {
+    font-size: 30px;
+    list-style: none;
+}
+
+#btnLimparFila {
+    font-size: 30px;
+    border-radius: 50px;
+    height: 50px;
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color: cadetblue;
+}
+
+.linha-vertical {
+    width: 10px;
+    height: 89%;
+    border-left: 2px solid #ccc;
+    position: absolute;
+    left: 50%;
+    top: 11.3%;
+}

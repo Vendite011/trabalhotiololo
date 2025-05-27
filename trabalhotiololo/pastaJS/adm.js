@@ -17,9 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   
       contagemModalidadesDiv.innerHTML = `
-        <p>Futebol: ${contagem.Futebol}</p>
-        <p>Vôlei: ${contagem.Vôlei}</p>
-        <p>Basquete: ${contagem.Basquete}</p>
+        
+        <div class="modalidades">
+        Futebol <p class="contagem-futebol">${contagem.Futebol}</p>
+        </div>
+        <div class="modalidades">
+        Vôlei <p class="contagem-volei">${contagem.Vôlei}</p>
+        </div>
+        <div class="modalidades">
+        Basquete <p class="contagem-basquete">${contagem.Basquete}</p>
+        </div>
       `;
   
       // Lista de fichas

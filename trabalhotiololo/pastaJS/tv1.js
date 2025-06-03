@@ -7,20 +7,23 @@ function atualizarHora() {
   setInterval(atualizarHora, 1000);
   atualizarHora();
   
-  // Carrossel automático
-  function iniciarCarrossel(id) {
-    const carrossel = document.getElementById(id);
-    const imagens = carrossel.querySelectorAll("img");
-    let index = 0;
-  
-    setInterval(() => {
-      index = (index + 1) % imagens.length;
-      carrossel.style.transform = `translateX(-${index * 100}%)`;
-    }, 10000);
+  const carrossel = document.getElementById('carrossel');
+  const totalSlides = carrossel.children.length;
+  let index = 0;
+
+  function showSlide() {
+    carrossel.style.transform = `translateX(-${index * 100}vw)`;
   }
-  
-  document.addEventListener("DOMContentLoaded", () => {
-    iniciarCarrossel("carrossel1");
-    iniciarCarrossel("carrossel2");
-  });
-  
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    showSlide();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide();
+  }
+
+  // ⏱️ Avanço automático opcional:
+  setInterval(nextSlide, 50000); // troca a cada 10 segundos

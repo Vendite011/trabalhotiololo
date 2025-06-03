@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escola de Esportes/entretenimento</title>
 
-  <link rel="stylesheet" href="../pastasCSS/style.css">
+  <link rel="stylesheet" href="../pastasCSS/tv1.css">
 </head>
 
 <body>
@@ -18,91 +18,39 @@
     </ul>
   </nav>
   
-
-  <header>
-    <h1>Escola de Esportes</h1>
-  </header>
-
-  <main>
-    <section>
-      <h2>Data e Hora Atual</h2>
+  <div class="horario-fixo">
       <div class="hora" id="hora">00:00</div>
-    </section>
+  </div>
 
-    <section>
-      <h2>Próxima Aula</h2>
-      <p id="proximaAula">Futebol - 15:00</p>
-    </section>
+  <div class="carrossel" id="carrossel">
 
-    <section>
+    <div class="slide">
       <h2>Horários de Aulas</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Horário</th>
-            <th>Esporte</th>
-            <th>Professor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>08:00</td><td>Vôlei</td><td>Maria</td></tr>
-          <tr><td>10:00</td><td>Basquete</td><td>Carlos</td></tr>
-          <tr><td>15:00</td><td>Futebol</td><td>João</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section>
-      <h2>Notícias e Avisos</h2>
-      <ul>
-        <li>Campeonato interno de futebol no sábado!</li>
-        <li>Aula de natação cancelada na próxima quarta-feira.</li>
-      </ul>
-    </section>
-
-    <!-- Carrosséis lado a lado -->
-    <div class="lado-a-lado">
-      <section>
-        <h2>Carrossel 1</h2>
-        <div class="carrossel-container">
-          <div class="carrossel-slide" id="carrossel1">
-            <img src="../img/jogo3.jpg" alt="Jogo 1">
-            <img src="../img/jogo2.jpg" alt="Jogo 2">
-            <img src="../img/jogo1.jpg" alt="Jogo 3">
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Carrossel 2</h2>
-        <div class="carrossel-container">
-          <div class="carrossel-slide" id="carrossel2">
-            <img src="../img/volei.jpg" alt="Jogo 4">
-            <img src="../img/futebol.jpg" alt="Jogo 5">
-            <img src="../img/basquete.jpg" alt="Jogo 6">
-          </div>
-        </div>
-      </section>
+      <br>
+    AQUI VAI FICAR UMA IMAGEM FEITA NO CANVA***
     </div>
 
-    <section>
-      <h2>Sobre a Escola</h2>
-      <p>A Escola de Esportes promove atividades esportivas para todas as idades, com foco em saúde, disciplina e espírito de equipe.</p>
-    </section>
+    <div class="slide bg3">
+      <div class="sobre-escola">
+        <h2>Sobre a Escola</h2>
+        <br><br>
+          <p>
+            A escola <b>Viva+Esportes</b> foi criada para incentivar a prática esportiva e transformar vidas. Nosso foco é melhorar a saúde física e mental, 
+            promover trabalho em equipe e desenvolver valores como respeito e disciplina. Acreditamos que o esporte vai além da competição - ele forma 
+            cidadãos mais fortes, saudáveis e preparados para os desafios da vida.
+          </p><br><br>
+        </div>
+        <div class="contato-escola">
+          <h2>Contato</h2>
+          <p>Telefone: (11) 1111-1111<br>Email: contato@escoladeesportes.com.br<br>Endereço: Rua das Quadras, 123 - São Paulo, SP</p>
+        </div>
+  </div>
+</div>
 
-    <section>
-      <h2>Contato</h2>
-      <p>
-        Telefone: (11) 1111-1111<br>
-        Email: contato@escoladeesportes.com.br<br>
-        Endereço: Rua das Quadras, 123 - São Paulo, SP
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>Site desenvolvido por equipe.</p>
-  </footer>
+<div class="controls">
+  <button onclick="prevSlide()">Anterior</button>
+  <button onclick="nextSlide()">Próximo</button>
+</div>
 
   <script src="../pastaJS/tv1.js"></script>
 </body>

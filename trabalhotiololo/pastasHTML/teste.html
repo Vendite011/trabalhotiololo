@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escola de Esportes - Carrossel</title>
+  <link rel="stylesheet" href="../pastasCSS/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .carrossel {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100vw;
+      height: 100vh;
+      padding: 2rem;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .slide:nth-child(odd) {
+      background-color: #dbeafe;
+    }
+
+    .slide:nth-child(even) {
+      background-color: #fecaca;
+    }
+
+    nav {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: #2563eb;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+
+    .controls button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #2563eb;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <ul>
+    <li><a href="../pastasHTML/recep.html">Recepção</a></li>
+    <li><a href="../pastasHTML/tv2.html">TV2 (Fila)</a></li>
+    <li><a href="../pastasHTML/adm.html">ADM</a></li>
+    <li><a href="../pastasHTML/tv1.html">TV1</a></li>
+  </ul>
+</nav>
+
+<div class="carrossel" id="carrossel">
+  <div class="slide">
+    <h1>Escola de Esportes</h1>
+    <p>Bem-vindo à nossa escola!</p>
+  </div>
+
+  <div class="slide">
+    <h2>Data e Hora Atual</h2>
+    <div class="hora" id="hora">00:00</div>
+  </div>
+
+  <div class="slide">
+    <h2>Próxima Aula</h2>
+    <p id="proximaAula">Futebol - 15:00</p>
+  </div>
+
+  <div class="slide">
+    <h2>Horários de Aulas</h2>
+    <table border="1">
+      <tr><th>Horário</th><th>Esporte</th><th>Professor</th></tr>
+      <tr><td>08:00</td><td>Vôlei</td><td>Maria</td></tr>
+      <tr><td>10:00</td><td>Basquete</td><td>Carlos</td></tr>
+      <tr><td>15:00</td><td>Futebol</td><td>João</td></tr>
+    </table>
+  </div>
+
+  <div class="slide">
+    <h2>Notícias e Avisos</h2>
+    <ul>
+      <li>Campeonato interno de futebol no sábado!</li>
+      <li>Aula de natação cancelada na próxima quarta-feira.</li>
+    </ul>
+  </div>
+
+  <div class="slide">
+    <h2>Sobre a Escola</h2>
+    <p>A Escola de Esportes promove atividades esportivas para todas as idades, com foco em saúde, disciplina e espírito de equipe.</p>
+  </div>
+
+  <div class="slide">
+    <h2>Contato</h2>
+    <p>Telefone: (11) 1111-1111<br>Email: contato@escoladeesportes.com.br<br>Endereço: Rua das Quadras, 123 - São Paulo, SP</p>
+  </div>
+</div>
+
+<div class="controls">
+  <button onclick="prevSlide()">Anterior</button>
+  <button onclick="nextSlide()">Próximo</button>
+</div>
+
+</body>
+</html>

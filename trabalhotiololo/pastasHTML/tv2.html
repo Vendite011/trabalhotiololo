@@ -16,20 +16,21 @@
         </ul>
       </nav>
       
-    <h2>Fila de espera</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Ficha</th>
-          <th>Nome</th>
-          <th>Modalidade</th>
-        </tr>
-      </thead>
-      
-        <tbody id="corpoTabela">
-        </tbody>
-      </table>
-      
+    <h2 style="text-align:center">Fila de espera</h2>
+
+<div style="display: flex; gap: 40px; padding: 20px; justify-content: center; align-items: flex-start;">
+  <!-- ESQUERDA: FILA ATUAL -->
+  <div id="filaContainer" style="flex: 1;">
+    <!-- Containers das fichas aparecerão aqui -->
+  </div>
+
+  
+<div style="flex: 1;">
+  <div id="proximaPessoa"></div>
+  <div id="historicoChamadas"></div>
+</div>
+</div>
+
     <script src="../pastaJS/tv2.js"></script>
 </body>
 </html>

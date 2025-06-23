@@ -53,6 +53,7 @@ text-align: center;
   flex-wrap: wrap;         /* Permite que os itens quebrem para a próxima linha */
   padding: 0;
   max-width: 900px;        /* Limita a largura para forçar quebra */
+  height: 100%;
 }
 
 #chamadasContainer li {

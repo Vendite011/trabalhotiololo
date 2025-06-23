@@ -32,21 +32,6 @@ function enviar() {
   localStorage.setItem("fila", JSON.stringify(fila));
   localStorage.setItem("numeroFicha", numeroFicha.toString());
 
-  // Mostra o cartão na tela
-  const card = document.createElement("div");
-  card.className = "ficha-card";
-  card.innerHTML = `
-    <h3>📄 Ficha Nº ${pessoa.ficha.toString().padStart(3, '0')}</h3>
-    <p>👤 Nome: ${pessoa.nome}</p>
-    <p>🏅 Modalidade: ${pessoa.modalidade}</p>
-  `;
-
-  document.body.appendChild(card);
-
-  // Redireciona depois de 3 segundos
-  setTimeout(() => {
-    window.location.href = "tv2.html";
-  }, 1000);
 }
 
 

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => { 
+document.addEventListener("DOMContentLoaded", () => {
   const filaContainer = document.getElementById("filaContainer");
   const proximaPessoaDiv = document.getElementById("proximaPessoa");
   const historicoDiv = document.getElementById("historicoChamadas");
@@ -7,42 +7,58 @@ document.addEventListener("DOMContentLoaded", () => {
     const fila = JSON.parse(localStorage.getItem("fila")) || [];
 
     // Atualiza visual da fila (lado esquerdo)
-    filaContainer.innerHTML = "";
+    filaContainer.innerHTML = "<h3> Aguardando </h3>";
     fila.forEach(pessoa => {
       const card = document.createElement("div");
-      card.className = "ficha-card";
+      // card.className = "ficha-card";
       card.innerHTML = `
-        <p><strong>Ficha:</strong> ${pessoa.ficha.toString().padStart(3, '0')}</p>
-        <p><strong>Nome:</strong> ${pessoa.nome}</p>
-        <p><strong>Modalidade:</strong> ${pessoa.modalidade}</p>
+        <p>${pessoa.ficha.toString().padStart(3, '0')}</p>
       `;
       filaContainer.appendChild(card);
     });
-
-    // Exibir a próxima pessoa
-    if (fila.length > 0) {
-      const proxima = fila[0];
-      proximaPessoaDiv.innerHTML = `
-        <h3 style="margin-bottom: 8px;">🔔 Próxima pessoa a ser chamada:</h3>
-        <p><strong>Ficha:</strong> ${proxima.ficha.toString().padStart(3, '0')}</p>
-        <p><strong>Nome:</strong> ${proxima.nome}</p>
-        <p><strong>Modalidade:</strong> ${proxima.modalidade}</p>
-        <hr style="margin-top: 20px;">
-      `;
-    } else {
-      proximaPessoaDiv.innerHTML = `<p>Nenhuma pessoa na fila</p>`;
-    }
   }
 
+
+  //Pessoas chamadas
   function exibirHistorico() {
     const historico = JSON.parse(localStorage.getItem("historicoChamadas")) || [];
+  const ultimos5 = historico.slice(-5);
 
-    historicoDiv.innerHTML = "<h3>✅ Pessoas já chamadas:</h3><ul>" +
-      historico.map(pessoa => `
-        <li>
-          Ficha ${pessoa.ficha.toString().padStart(3, '0')} - ${pessoa.nome} (${pessoa.modalidade})
-        </li>`).join("") +
-      "</ul>";
+  historicoDiv.innerHTML = "<h3> Chamadas</h3><ul>" +
+    ultimos5.map(pessoa => `
+      <li>
+        ${pessoa.ficha.toString().padStart(3, '0')}
+      </li>`).join("") +
+    "</ul>";
+  }
+
+
+  function adicionarAoHistorico(pessoa) {
+    let historico = JSON.parse(localStorage.getItem("historicoChamadas")) || [];
+
+    // Se já tem 5, remove a mais antiga
+    if (historico.length >= 5) {
+      historico.shift(); // remove o primeiro (mais antigo)
+    }
+
+    historico.push(pessoa); // adiciona o novo chamado
+    localStorage.setItem("historicoChamadas", JSON.stringify(historico));
+  }
+
+
+
+  function chamarProximaPessoa() {
+    let fila = JSON.parse(localStorage.getItem("fila")) || [];
+
+    if (fila.length === 0) return;
+
+    const proximaPessoa = fila.shift(); // remove a primeira da fila
+    localStorage.setItem("fila", JSON.stringify(fila));
+
+    adicionarAoHistorico(proximaPessoa); // atualiza o histórico com limite
+
+    carregarFila();
+    exibirHistorico();
   }
 
   carregarFila();

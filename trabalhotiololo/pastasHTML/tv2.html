@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tv2</title>
-    <link rel="stylesheet" href="../pastasCSS/style.css">
+    <title>Guichê - TV2</title>
+    <link rel="stylesheet" href="../pastasCSS/tv2.css">
 </head>
 <body>
-    <nav>
-        <ul>
-          <li><a href="../pastasHTML/recep.html">Recepção</a></li>
-          <li><a href="../pastasHTML/tv2.html">TV2 (Fila)</a></li>
-          <li><a href="../pastasHTML/adm.html">ADM</a></li>
-          <li><a href="../pastasHTML/tv1.html">TV1</a></li>
-        </ul>
-      </nav>
-      
-    <h2 style="text-align:center">Fila de espera</h2>
 
-<div style="display: flex; gap: 40px; padding: 20px; justify-content: center; align-items: flex-start;">
+<div class="container-todo">
+<div style="display: flex; padding: 0; justify-content: center; align-items: flex-start;">
   <!-- ESQUERDA: FILA ATUAL -->
-  <div id="filaContainer" style="flex: 1;">
+  <div id="filaContainer">
     <!-- Containers das fichas aparecerão aqui -->
   </div>
 
-  
-<div style="flex: 1;">
-  <div id="proximaPessoa"></div>
-  <div id="historicoChamadas"></div>
+  <!-- DIREITA: CHAMADAS -->
+    <div id="chamadasContainer" style="flex: 1;">
+      <div id="historicoChamadas"></div>
+    </div>
+  </div>
 </div>
-</div>
+
+
+
+<div class="linha-vertical"></div>
 
     <script src="../pastaJS/tv2.js"></script>
 </body>

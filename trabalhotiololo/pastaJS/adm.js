@@ -32,10 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (fila.length > 0) {
       const proxima = fila[0];
       proximaPessoaInfo.innerHTML = `
-        <h4>🔔 Próxima pessoa:</h4>
-        <p><strong>Ficha:</strong> ${proxima.ficha.toString().padStart(3, '0')}</p>
-        <p><strong>Nome:</strong> ${proxima.nome}</p>
-        <p><strong>Modalidade:</strong> ${proxima.modalidade}</p>
+        <p><strong>Ficha:</strong> ${proxima.ficha.toString().padStart(3, '0')}
+        <p><strong>Nome:</strong> ${proxima.nome}
+        <p><strong>Modalidade:</strong> ${proxima.modalidade}
       `;
     } else {
       proximaPessoaInfo.innerHTML = `<p>Nenhuma pessoa na fila</p>`;
@@ -51,15 +50,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Botão chamar próxima
+  const clickSound = new Audio("https://www.soundjay.com/button/beep-07.mp3");
   document.getElementById("btnChamarProxima").addEventListener("click", () => {
-    let fila = JSON.parse(localStorage.getItem("fila")) || [];
-    let historico = JSON.parse(localStorage.getItem("historicoChamadas")) || [];
+  clickSound.currentTime = 0; // reinicia se clicar várias vezes rápido
+  clickSound.play();
 
-    if (fila.length === 0) {
-      alert("Nenhuma pessoa na fila!");
-      return;
+  let fila = JSON.parse(localStorage.getItem("fila")) || [];
+  let historico = JSON.parse(localStorage.getItem("historicoChamadas")) || [];
+
+  if (fila.length === 0) {
+    alert("Nenhuma pessoa na fila!");
+    return;
     }
-
+      
     const chamada = fila.shift(); // remove primeira
     historico.unshift(chamada); // adiciona como objeto
     historico = historico.slice(0, 10);
@@ -72,4 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(atualizarPainel, 3000);
   atualizarPainel();
+
 });

@@ -6,36 +6,33 @@
   <link rel="stylesheet" href="../pastasCSS/adm.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="recep.html">Recepção</a></li>
-      <li><a href="tv2.html">TV2 (Fila)</a></li>
-      <li><a href="adm.html">ADM</a></li>
-      <li><a href="tv1.html">TV1</a></li>
-    </ul>
-  </nav>
+  
+  <div style="display: flex; padding: 0; justify-content: center; align-items: flex-start;">
+    <!-- DIREITA -->
+    <div id="adm-coluna">
+      <div class="pessoas-fila">
+        <p><strong class="texto-total-fila">Pessoas na Fila:</strong>
+        <p class="texto-total-total">Total: <strong id="totalFila">0</strong></p>
 
-  <div id="adm-coluna">
-    <div class="pessoas-fila">
-     <p><strong>Total de pessoas na fila:</strong> <strong id="totalFila">0</strong></p>
-
-      <div id="contagemModalidades"></div>
+        <div id="contagemModalidades"></div>
+          <h3>Fichas na fila</h3>
+        <div class="fichas-coluna">
+          <ul id="listaFichas"></ul>
+        </div>
+        <button id="btnChamarProxima">Chamar Próxima Pessoa</button></br>   
+      </div>
     </div>
 
-    <div class="fichas">
-    <h3>Fichas na fila</h3>
-    <div class="fichas-coluna">
-      <ul id="listaFichas"></ul>
-    </div>
-<div id="proximaPessoaADM" style="margin-top: 20px; color: white;"></div>
 
-    <button id="btnLimparFila">Limpar Fila</button>
-<button id="btnChamarProxima">Chamar Próxima Pessoa</button>
-
+    <!-- ESQUERDA -->
+    <div id="adm-coluna2" style="flex: 1;">
+      <div class="texto-proxima-pessoa">Próxima Pessoa:</div>
+      <div class="proxima-pessoa">
+        <div id="proximaPessoaADM" style="margin-top: 20px; color: rgb(116, 12, 12);"></div>
+          <button id="btnLimparFila">Limpar Fila</button>
+      </div>
     </div>
   </div>
-
-  <div class="linha-vertical"></div>
 
   <script src="../pastaJS/adm.js"></script>
 </body>

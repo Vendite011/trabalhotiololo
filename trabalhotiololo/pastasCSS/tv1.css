@@ -1,120 +1,85 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body, html {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: Arial;
-    }
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial;
+  overflow: hidden; /* Evita barras de rolagem */
+}
 
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-        opacity: 80%;
-        height: 63px;
-    }
+.horario-fixo {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 85%;
+    left: 81.5%;
+    z-index: 100;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 60px;
+    color: #fff;
+}
 
-    nav ul {
-        font-size: 20px;
-        list-style: none;
-        display: flex;
-        gap: 185px;
-    }
+.carrossel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
 
-    nav li a {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.6);
-    }
+.slide {
+  min-width: 100vw;
+  height: 100vh;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-    .horario-fixo {
-        position: absolute;
-        background-color: rgba(0, 0, 0, 0.7);
-        top: 85%;
-        left: 80%;
-        z-index: 100;
-        padding: 10px;
-        border-radius: 20px;
-        font-size: 60px;
-        color: #fff;
-    }
+.slide:nth-child(odd) {
+  background-color: #950101;
+}
 
-    .carrossel {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
+.slide:nth-child(even) {
+  background-color: #fecaca;
+}
 
-    .slide {
-      min-width: 100vw;
-      height: 100vh;
-      background: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
+.bg3 {
+    color: #fff;
+    background-image: url('../fundoesporte.png');
+    background-size: cover;
+    background-position: center;
+}
 
-    .slide:nth-child(odd) {
-      background-color: #dbeafe;
-    }
+p {
+    font-size: 25px;
+    text-align: justify;
 
-    .slide:nth-child(even) {
-      background-color: #fecaca;
-    }
+}
 
-    .bg3 {
-        color: #fff;
-        background-image: url('../fundoesporte.png');
-        background-size: cover;
-        background-position: center;
-    }
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
 
-    p {
-        font-size: 25px;
-        text-align: justify;
-    
-    }
+img {
+  height: 100%;
+}
 
-    h2 {
-        font-size: 30px;
-        text-align: center;
-    }
+.sobre-escola {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    margin: 0 150px 20px 150px;
+    padding: 20px 20px 0 20px;
+}
 
-    .sobre-escola {
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 20px;
-        margin: 0 150px 20px 150px;
-        padding: 20px 20px 0 20px;
-    }
-
-    .contato-escola {
-        background-color: rgba(0, 0, 0, 0.7);
-        border-radius: 20px;
-        padding: 20px 20px 20px 20px;
-    }
-
-    .controls {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 20px;
-    }
-
-    .controls button {
-      padding: 0.5rem 1rem;
-      border: none;
-      background-color: #2563eb;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
+.contato-escola {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+}

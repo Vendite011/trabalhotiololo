@@ -32,7 +32,17 @@ function enviar() {
   localStorage.setItem("fila", JSON.stringify(fila));
   localStorage.setItem("numeroFicha", numeroFicha.toString());
 
+  // Aviso de cadastro realizado 
+  alert(`Cadastro realizado!\nNome: ${nome}\nModalidade: ${modalidadeSelecionada}\nFicha nº: ${numeroFicha}`);
+
+  // Limpar campos
+  document.getElementById("nome").value = "";
+  modalidadeSelecionada = "";
+  document.querySelectorAll(".btn-fut, .btn-vly, .btn-bsk").forEach(btn => btn.classList.remove("active"));
+  
 }
+
+  
 
 
 // Deixa o botão da modalidade selecionado

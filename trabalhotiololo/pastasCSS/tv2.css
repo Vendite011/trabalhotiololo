@@ -1,82 +1,77 @@
-
-/* .ficha-card {
-  border: 2px solid #000;
-  border-radius: 10px;
-  padding: 15px;
-  margin-bottom: 20px;
-  font-size: 1.2em;
-  background-color: #f9f9f9;
-  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
-} */
-
 body {
   font-family: 'Arial';
   margin: 0;
-  overflow: hidden; /* Evita barras de rolagem */
+  padding: 0;
+  background-color: #fff;
+  overflow: hidden;
 }
 
+/* ESQUERDA */
 
 #filaContainer {
-display: flex;
-flex-wrap: wrap;         /* Permite que os itens quebrem para a próxima linha */
-padding: 0;
-max-width: 800px;        /* Limita a largura para forçar quebra */
-background-color: white;
-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  width: 50%;
+  max-width: 800px;
 }
 
 #filaContainer h3 {
-width: 100%;             /* Faz o título ocupar toda a largura */
-font-size: 70px;
-margin: 0 0 40px 0;
-text-align: center;
-color: rgb(116, 12, 12);
-font-family: 'Cooper Black';
+  width: 100%;
+  font-size: 4vw;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  color: rgb(116, 12, 12);
+  font-family: 'Cooper Black';
 }
 
 #filaContainer div {
-flex: 0 0 49%;
-font-weight: bold;
-text-align: center;
+  flex: 0 0 47%;
+  font-weight: bold;
+  text-align: center;
 }
 
 #filaContainer p {
-  font-size: 60px;
+  font-size: 4vw;
   margin: 0;
-  padding: 20px;
+  padding: 1rem;
 }
 
 /* DIREITA */
 
 #chamadasContainer {
   background-color: rgb(116, 12, 12);
-  flex-wrap: wrap;         /* Permite que os itens quebrem para a próxima linha */
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  justify-content: center;
+  height: 100vh;
   padding: 0;
-  max-width: 900px;        /* Limita a largura para forçar quebra */
-  height: 700px;
+}
+
+#chamadasContainer h3 {
+  width: 100%;
+  font-size: 4vw;
+  margin: 0 0 2.6rem 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: 'Cooper Black';
 }
 
 #chamadasContainer li {
   list-style: none;
-  
+  margin: 0;
+  padding: 1rem;
+
 }
 
 #chamadasContainer ul {
-  font-size: 60px;
+  font-size: 4vw;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   font-weight: bold;
   color: white;
   text-align: center;
-}
-
-#chamadasContainer h3 {
-width: 100%;             /* Faz o título ocupar toda a largura */
-font-size: 70px;
-margin: 0 0 40px 0;
-text-align: center;
-color: white;
-font-family: 'Cooper Black';
 }
 
 .linha-vertical {
@@ -84,6 +79,46 @@ font-family: 'Cooper Black';
   height: 83%;
   border-left: 3px solid rgb(116, 12, 12);
   position: absolute;
-  left: 26%;
+  left: 25%;
   top: 18%;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+
+  #filaContainer {
+    gap: 0.1rem;
+  }
+
+  #filaContainer h3 {
+    font-size: 7vw;
+    padding: 0;
+    margin-bottom: 0.7rem;
+  }
+
+  #filaContainer div {
+    flex: 0 0 100%;
+  }
+
+  #filaContainer p {
+    font-size: 10vw;
+  }
+
+  #chamadasContainer h3 {
+    font-size: 7vw;
+    margin: 0 0 1rem 0;
+  }
+
+  #chamadasContainer ul {
+    font-size: 10vw;
+  }
+
+  #chamadasContainer li {
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  .linha-vertical {
+    opacity: 0;
+  }
 }

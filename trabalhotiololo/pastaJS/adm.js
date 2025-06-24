@@ -50,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Botão chamar próxima
-  const clickSound = new Audio("https://www.soundjay.com/button/beep-07.mp3");
-  document.getElementById("btnChamarProxima").addEventListener("click", () => {
-  clickSound.currentTime = 0; // reinicia se clicar várias vezes rápido
+  const clickSound = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_eda0c77b0f.mp3");
+
+document.getElementById("btnChamarProxima").addEventListener("click", () => {
+  clickSound.currentTime = 0;
   clickSound.play();
 
   let fila = JSON.parse(localStorage.getItem("fila")) || [];
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (fila.length === 0) {
     alert("Nenhuma pessoa na fila!");
     return;
-    }
+  }
       
     const chamada = fila.shift(); // remove primeira
     historico.unshift(chamada); // adiciona como objeto

@@ -35,13 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function adicionarAoHistorico(pessoa) {
     let historico = JSON.parse(localStorage.getItem("historicoChamadas")) || [];
-
-    // Se já tem 5, remove a mais antiga
-    if (historico.length >= 5) {
-      historico.shift(); // remove o primeiro (mais antigo)
-    }
-
-    historico.push(pessoa); // adiciona o novo chamado
+    historico.push(pessoa); // adiciona ao final
     localStorage.setItem("historicoChamadas", JSON.stringify(historico));
   }
 
